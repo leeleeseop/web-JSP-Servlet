@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- 댓글 등록 / 수정 / 삭제를 위한 모달창 -->
 <div class="modal" id="boardReplyModal">
   <div class="modal-dialog">
