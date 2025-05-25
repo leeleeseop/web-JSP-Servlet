@@ -110,42 +110,6 @@ public class MessageController {
 				// jsp 정보
 				jsp = "Message/updateForm";
 				break;
-			
-			
-			case "/Message/update.do":
-				System.out.println("4-2.일반게시판 글수정 처리");
-				// 데이터 수집(사용자->서버 : form - input - name)
-				no = Long.parseLong(request.getParameter("no"));
-				content = request.getParameter("content");
-				// 변수 - vo 저장하고 Service
-				vo = new MessageVO();
-				vo.setNo(no);
-				vo.setContent(content);
-				// DB 적용하는 처리문 작성. MessageUpdateservice
-				Execute.execute(Init.get(uri), vo);
-				// 페이지 정보 받기 & uri에 붙이기
-				pageObject = PageObject.getInstance(request);
-				// 글보기로 자동 이동 -> jsp 정보를 작성해서 넘긴다.
-				jsp = "redirect:view.do?no=" + no + "&inc=0" + "&" + pageObject.getPageQuery();
-				break;
-			
-			
-			case "/Message/delete.do":
-				System.out.println("5.일반게시판 글삭제");
-				// 데이터 수집 - DB에서 실행에 필요한 데이터 - 글번호, 비밀번호 - MessageVO
-				no = Long.parseLong(request.getParameter("no"));
-				MessageVO deleteVO = new MessageVO();
-				deleteVO.setNo(no);
-				// DB 처리
-				Execute.execute(Init.get(uri), deleteVO);
-				System.out.println();
-				System.out.println("***************************");
-				System.out.println("**  " + deleteVO.getNo()+ "글이 삭제되었습니다.  **");
-				System.out.println("***************************");
-				jsp = "redirect:list.do?perPageNum=" + request.getParameter("perPageNum");
-				break;
-				
-			
 			default:
 				jsp = "error/404";
 				break;
