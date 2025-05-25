@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery Basic</title>
+<!-- Boostrap(디자인의 표준화) : jquery(동작의 표준화) 포함. -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- 동작 : js -->
+<script type="text/javascript">
+	/* 표시되는 문서(document)가 화면에 표시되어 준비되면(ready(함수)()) 전달된 실행해주세요 -> 아래 body 객체들이 다 생성된 상태가 된다. */
+	$(document).ready(function() {
+		$(".box").css("width", 100);
+		$(".box").css("height", 100);
+		$(".box").css("background", "red");
+	});
+</script>
+
+</head>
+<body>
+	<!-- 데이터를 표시하는 body -->
+	<div class="box"></div>
+	<div class="box"></div>
+	<script type="text/javascript">
+		//$(".box").css("width", 100);
+		//$(".box").css("height", 100);
+		//$(".box").css("background", "red");
+	</script>
+</body>
+</html>
